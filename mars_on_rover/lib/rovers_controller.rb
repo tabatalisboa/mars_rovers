@@ -8,10 +8,6 @@ class RoversController
     @plateau = [0, 1, 2, 3, 4, 5]
   end
 
-  def say_hello
-    @view.say_hello
-  end
-
   def create_rover
     x_coordinate = rand(0..5)
     y_coordinate = rand(0..5)
