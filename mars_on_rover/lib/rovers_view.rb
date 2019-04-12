@@ -2,7 +2,6 @@ require_relative 'rovers_controller'
 require_relative 'rover'
 
 class RoversView
-
   def display_rover_coordinates(rover)
     puts "Rover to NASA. My current coordinates are..."
     puts "> #{rover.x_coordinate} #{rover.y_coordinate} #{rover.translation}"

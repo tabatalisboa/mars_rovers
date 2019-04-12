@@ -8,6 +8,15 @@ class RoversController
     @plateau = [0, 1, 2, 3, 4, 5]
   end
 
+  def create_1st_rover
+    x_coordinate = 1
+    y_coordinate = 2
+    points_to = 0
+    rover = Rover.new(x_coordinate, y_coordinate, points_to)
+    @repository.add(rover)
+    @view.display_rover_coordinates(rover)
+  end
+
   def create_rover
     x_coordinate = rand(0..5)
     y_coordinate = rand(0..5)
@@ -28,9 +37,9 @@ class RoversController
     end
   end
 
-  def read_instructions
+  def read_instructions(instructions = @view.ask_instructions)
     rover = @repository.all.last
-    instructions_array = @view.ask_instructions.upcase.split("")
+    instructions_array = instructions.upcase.split("")
     instructions_array.each do |instruction|
       case instruction
       when "M" then rover.move
