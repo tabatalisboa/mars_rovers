@@ -10,7 +10,7 @@ class RoversView
   def ask_instructions
     puts "Roger! Mars Mission to NASA. Waiting instructions..."
     print "> "
-    return gets.chomp
+    gets.chomp
   end
 
   def wrong_instruction
@@ -19,5 +19,21 @@ class RoversView
 
   def destroy
     puts "WOPS! Rover fell off the edge..."
+  end
+
+  def rover_example(instructions)
+    puts "Roger! Receveing instructions..."
+    dinamic_type("> #{instructions}")
+  end
+
+  private
+
+  def dinamic_type(string)
+    string_array = string.split("")
+    string_array.each do |letter|
+      print letter
+      sleep(0.1)
+    end
+    puts ""
   end
 end

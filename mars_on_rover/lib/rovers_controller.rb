@@ -40,4 +40,12 @@ class RoversController
     end
     final_position
   end
+
+  # private
+
+  def rover_example(x_coordinate, y_coordinate, points_to, instructions)
+    create_rover(x_coordinate, y_coordinate, points_to)
+    @view.rover_example(instructions)
+    read_instructions(instructions)
+  end
 end

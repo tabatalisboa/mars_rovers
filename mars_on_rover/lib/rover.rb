@@ -16,10 +16,13 @@ class Rover
     end
   end
 
-  # private
-
-  def points_to
-    @points_to
+  def translation
+    case @points_to
+    when 0 then "N"
+    when 2 then "S"
+    when 1 then "E"
+    when 3 then "W"
+    end
   end
 
   def turn_left
@@ -38,12 +41,9 @@ class Rover
     end
   end
 
-  def translation
-    case @points_to
-      when 0 then "N"
-      when 2 then "S"
-      when 1 then "E"
-      when 3 then "W"
-    end
+  private
+
+  def points_to
+    @points_to
   end
 end
