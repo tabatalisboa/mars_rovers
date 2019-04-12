@@ -8,19 +8,7 @@ class RoversController
     @plateau = [0, 1, 2, 3, 4, 5]
   end
 
-  def create_1st_rover
-    x_coordinate = 1
-    y_coordinate = 2
-    points_to = 0
-    rover = Rover.new(x_coordinate, y_coordinate, points_to)
-    @repository.add(rover)
-    @view.display_rover_coordinates(rover)
-  end
-
-  def create_rover
-    x_coordinate = rand(0..5)
-    y_coordinate = rand(0..5)
-    points_to = rand(0..3)
+  def create_rover(x_coordinate = rand(0..5), y_coordinate = rand(0..5), points_to = rand(0..3))
     rover = Rover.new(x_coordinate, y_coordinate, points_to)
     @repository.add(rover)
     @view.display_rover_coordinates(rover)

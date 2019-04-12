@@ -12,7 +12,7 @@ class Router
     puts "                  ---               "
 
     while @running
-      @rovers_controller.create_1st_rover
+      @rovers_controller.create_rover(1, 2, 0)
       @rovers_controller.read_instructions("LMLMLMLMM")
       @rovers_controller.create_rover
       @rovers_controller.read_instructions
